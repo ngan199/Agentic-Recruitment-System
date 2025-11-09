@@ -1,0 +1,43 @@
+The contents of the file /my-text-extraction-project/my-text-extraction-project/tests/sample_cvs/developer_cv.pptx cannot be directly generated as a text representation because PPTX files are binary files that contain structured data for slides, text, images, and other elements. However, I can provide you with a description of how to create a sample CV in PPTX format.
+
+To create a sample CV PPTX file for a developer, you can use a presentation software like Microsoft PowerPoint or Google Slides. Here’s a suggested structure for the slides:
+
+1. **Slide 1: Title Slide**
+   - Title: "John Doe"
+   - Subtitle: "Software Developer"
+   - Optional: Add a professional photo.
+
+2. **Slide 2: Personal Information**
+   - Name: John Doe
+   - Email: john.doe@example.com
+   - Phone: (123) 456-7890
+   - LinkedIn: linkedin.com/in/johndoe
+
+3. **Slide 3: Skills**
+   - Bullet points listing skills such as:
+     - Python
+     - JavaScript
+     - React
+     - SQL
+     - Git
+
+4. **Slide 4: Experience**
+   - Job Title: Software Developer at XYZ Corp
+     - Dates: Jan 2020 - Present
+     - Responsibilities: Developed web applications, collaborated with cross-functional teams, etc.
+   - Job Title: Junior Developer at ABC Inc
+     - Dates: Jun 2018 - Dec 2019
+     - Responsibilities: Assisted in software development, wrote unit tests, etc.
+
+5. **Slide 5: Education**
+   - Degree: Bachelor of Science in Computer Science
+   - University: University of Example
+   - Graduation Year: 2018
+
+6. **Slide 6: Projects**
+   - Project Title: Example Project
+     - Description: Brief description of the project and technologies used.
+
+After creating the slides with the above content, save the presentation as "developer_cv.pptx" in the specified directory.
+
+If you need further assistance with creating the PPTX file programmatically using Python, please let me know!
