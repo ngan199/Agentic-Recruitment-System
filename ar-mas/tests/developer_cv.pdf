@@ -1,0 +1,78 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog
+   /Pages 2 0 R
+>>
+endobj
+2 0 obj
+<< /Type /Pages
+   /MediaBox [0 0 612 792]
+   /Kids [3 0 R]
+   /Count 1
+>>
+endobj
+3 0 obj
+<< /Type /Page
+   /Parent 2 0 R
+   /MediaBox [0 0 612 792]
+   /Contents 4 0 R
+   /Resources << /Font << /F1 5 0 R >> >>
+   /Annots []
+>>
+endobj
+4 0 obj
+<< /Length 123 >>
+stream
+BT
+/F1 24 Tf
+100 700 Td
+(John Doe) Tj
+100 650 Td
+(Software Developer) Tj
+100 600 Td
+(Email: john.doe@example.com) Tj
+100 550 Td
+(Phone: (123) 456-7890) Tj
+100 500 Td
+(Bio: Passionate software developer with 5+ years of experience in building scalable web applications.) Tj
+100 450 Td
+(Skills:) Tj
+100 400 Td
+(Java, Python, JavaScript, React, Node.js, SQL) Tj
+100 350 Td
+(Experience:) Tj
+100 300 Td
+(Company A, Software Developer, 2018 - Present) Tj
+100 250 Td
+(- Developed and maintained web applications using Java and React.) Tj
+100 200 Td
+(Company B, Junior Developer, 2016 - 2018) Tj
+100 150 Td
+(- Assisted in the development of internal tools using Python and SQL.) Tj
+100 100 Td
+(Education:) Tj
+100 50 Td
+(B.S. in Computer Science, University of Example, 2016) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font
+   /Subtype /Type1
+   /BaseFont /Helvetica
+>>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000010 00000 n 
+0000000060 00000 n 
+0000000110 00000 n 
+0000000200 00000 n 
+0000000270 00000 n 
+trailer
+<< /Root 1 0 R
+>>
+startxref
+300
+%%EOF
