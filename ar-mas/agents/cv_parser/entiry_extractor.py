@@ -1,5 +1,6 @@
 from typing import Dict, Any
 from .ner_helpers import run_ner
+from .regex_helpers import extract_contacts
 
 def entity_extractor(raw_text: str, *, do_zero_shot: bool = True) -> Dict[str, Any]:
     """

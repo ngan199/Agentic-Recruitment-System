@@ -110,3 +110,97 @@ def extract_contacts(text: str, region: Optional[str] = None) -> Dict[str, List[
         "phone": clean_list(valid_phones),
         "dates": clean_list(dates)
     }
+
+
+def extract_titles_degrees(text: str) -> Dict[str, List[str]]:
+    if not text:
+        return {"titles": [], "degrees": []}
+
+    text_lower = text.lower()
+
+    # TECH JOB TITLES (controlled vocabulary)
+    TECH_TITLES = [
+        # Engineering
+        "software engineer", "backend engineer", "frontend engineer",
+        "full stack engineer", "fullstack engineer",
+        "machine learning engineer", "ml engineer",
+        "data engineer", "platform engineer",
+        "cloud engineer", "devops engineer",
+
+        # Developer roles
+        "software developer", "backend developer", "frontend developer",
+        "full stack developer", "fullstack developer",
+        "android developer", "ios developer", "mobile developer",
+        "web developer",
+
+        # Data roles
+        "data scientist", "applied scientist",
+        "data analyst", "business intelligence analyst",
+        "data science intern", "ml scientist",
+
+        # Architecture / Infra
+        "solutions architect", "cloud architect",
+        "system architect", "systems engineer",
+        "security engineer", "cybersecurity analyst",
+
+        # Managers/Lead (only tech)
+        "engineering manager", "technical lead", "tech lead",
+        "product engineer", "ai engineer",
+        "qa engineer", "qa tester", "test automation engineer"
+    ]
+
+    found_titles = []
+    for title in TECH_TITLES:
+        pattern = re.compile(rf"\b{re.escape(title)}\b", re.IGNORECASE)
+        matches = pattern.findall(text)
+        if matches:
+            found_titles.extend(matches)
+
+    # Clean + dedupe
+    found_titles = sorted(set([t.strip() for t in found_titles]))
+
+    # DEGREE PATTERNS (accept all sectors)
+    DEGREE_REGEX = re.compile(
+        r"""
+        (?:
+            bachelor\sof\s[a-zA-Z ]+ |
+            master\sof\s[a-zA-Z ]+   |
+            doctor\sof\s[a-zA-Z ]+   |
+            associate\sof\s[a-zA-Z ]+|
+            diploma\sin\s[a-zA-Z ]+  |
+
+            b\.\s?sc\b |
+            bsc\b |
+            b\.?eng\b |
+            beng\b |
+            b\.?tech\b |
+            btech\b |
+
+            m\.\s?sc\b |
+            msc\b |
+            m\.?eng\b |
+            meng\b |
+            m\.?tech\b |
+            mtech\b |
+            mba\b   |
+
+            ph\.?d\b |
+            phd\b
+        )
+        """,
+        re.IGNORECASE | re.VERBOSE
+    )
+
+    degree_matches = DEGREE_REGEX.findall(text)
+
+    # normalize formatting
+    degree_matches = [
+        re.sub(r"\s+", " ", d).strip().title() for d in degree_matches
+    ]
+
+    degree_matches = sorted(set(degree_matches))
+
+    return {
+        "titles": found_titles,
+        "degrees": degree_matches
+    }
